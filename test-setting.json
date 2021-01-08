@@ -1,0 +1,43 @@
+{
+  "analysis": {
+    "analyzer": {
+      "suggest": {
+        "tokenizer": "suggest"
+      },
+      "search_suggest": {
+        "tokenizer": "ik_max_word",
+        "filter": [
+          "lowercase"
+        ],
+        "char_filter": [
+          "ts_convert"
+        ]
+      },
+      "ts_convert": {
+        "tokenizer": "ts_convert"
+      }
+    },
+    "tokenizer": {
+      "suggest": {
+        "type": "edge_ngram",
+        "min_gram": 1,
+        "max_gram": 10,
+        "token_chars": [
+          "letter"
+        ]
+      },
+      "ts_convert": {
+        "type": "stconvert",
+        "delimiter": "#",
+        "keep_both": false,
+        "convert_type": "t2s"
+      }
+    },
+    "char_filter": {
+      "ts_convert": {
+        "type": "stconvert",
+        "convert_type": "t2s"
+      }
+    }
+  }
+}
