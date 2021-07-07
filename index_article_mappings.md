@@ -1,3 +1,7 @@
+index article’s mappings and settings ： 
+
+```
+
 {
   "article" : {
     "aliases" : { },
@@ -138,3 +142,4 @@
     }
   }
 }
+```
